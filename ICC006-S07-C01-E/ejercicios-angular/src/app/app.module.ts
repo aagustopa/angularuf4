@@ -4,12 +4,14 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormComponent } from './form/form.component';
+import { UserCreateFormComponent } from './ex1/components/user-create-form/user-create-form.component';
+import { UserUpdateFormComponent } from './ex2/components/user-update-form/user-update-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent
+    UserCreateFormComponent,
+    UserUpdateFormComponent
   ],
   imports: [
     BrowserModule,

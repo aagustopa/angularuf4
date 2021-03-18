@@ -1,0 +1,12 @@
+<h1>Exercici 1</h1>
+<form (submit)="submitForm($event)">
+    <div>
+        <label for="name"></label>
+        <input type="text" id="name" name="name" [(ngModel)]="user.name">
+    </div>
+    <div>
+        <label for="job"></label>
+        <input type="text" id="job" name="job" [(ngModel)]="user.job">
+    </div>
+    <input type="submit" value="Crea">
+</form>

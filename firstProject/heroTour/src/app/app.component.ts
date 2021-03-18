@@ -15,6 +15,6 @@ export class AppComponent {
 
   async showUsers(): Promise<void> {
     console.log('hola');
-    console.log(await this.myService.getUsers());
+    // console.log(await this.myService.getUsers());
   }
 }
