@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero';
-import { HeroService } from '../services/hero.service';
+import { Hero } from '../../models/hero';
+import { HeroService } from '../../services/hero.service';
 // import { HEROES } from '../mock-heroes';
 
 @Component({
-  selector: 'app-heroes',
-  templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.css']
+  selector: 'app-heroes-list',
+  templateUrl: './heroes-list.component.html',
+  styleUrls: ['./heroes-list.component.css']
 })
-export class HeroesComponent implements OnInit {
+export class HeroesListComponent implements OnInit {
 
   // hero: Hero = {
   //   id: 1,
@@ -22,6 +22,7 @@ export class HeroesComponent implements OnInit {
   // para ejecutar cosas al inicio, se carga antes del html
   ngOnInit(): void {
     this.getHeroes();
+    this.getExemple();
   }
 
   // comentado desde que usamos rutas
@@ -30,7 +31,14 @@ export class HeroesComponent implements OnInit {
   // }
 
   getHeroes(): void {
-    this.heroes = this.$hero.getHeroes();
+    // this.heroes = this.$hero.getHeroes();
+    this.$hero.getHeroes().subscribe((heroes) => this.heroes = heroes);
+  }
+
+  getExemple() {
+    this.$hero.getExempleUsers().subscribe((data) => {
+      console.log(data);
+    })
   }
 
 }

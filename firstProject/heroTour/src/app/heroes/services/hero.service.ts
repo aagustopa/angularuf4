@@ -1,18 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HEROES } from '../mock-heroes';
-import { Hero } from '../hero';
+import { Hero } from '../models/hero';
+import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HeroService {
 
-  constructor() { }
+  constructor(
+    private http:HttpClient
+  ) { }
 
   // getHeores():import("../hero").Hero[]
-  getHeroes(): Hero[] {
-    return HEROES;
-  }
+  // getHeroes(): Hero[] {
+  //   return HEROES;
+  // }
 
   getHeroe(id: number): Hero {
     return HEROES.find((el) => el.id === id);
@@ -27,4 +31,12 @@ export class HeroService {
   //     console.error(err);
   //   }
   // }
+
+  getHeroes(): Observable<Hero[]> {
+    return of(HEROES);
+  }
+
+  getExempleUsers(){
+    return this.http.get('https://reqres.in/api/users');
+  }
 }
