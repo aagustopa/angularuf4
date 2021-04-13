@@ -9,13 +9,13 @@ import { ContainerComponent } from './components/container/container.component';
 
 @NgModule({
   declarations: [
+    ContainerComponent,
     PhotosListComponent,
-    AlbumsListComponent,
-    ContainerComponent
+    AlbumsListComponent
   ],
   imports: [
     CommonModule,
     AlbumsRoutingModule
-  ]
+  ],
 })
 export class AlbumsModule { }
