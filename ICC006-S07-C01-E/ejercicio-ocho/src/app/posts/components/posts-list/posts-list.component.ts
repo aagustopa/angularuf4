@@ -10,6 +10,7 @@ import { PostService } from '../../services/post.service';
 export class PostsListComponent implements OnInit {
 
   public posts: Post[];
+  public post : Post;
 
   constructor(private post$: PostService) { }
 
@@ -21,6 +22,22 @@ export class PostsListComponent implements OnInit {
       });
     } catch (e) {
       console.log(e);
+    }
+  }
+  
+  public async submitDelete(id){
+    console.log('boton clickado', id);
+    try{
+      const res = await this.post$.deletePost(this.post);
+      if(res){
+        console.log(res);
+        alert('Post eliminado!');
+      }else{
+        console.error('ERROR');
+      }
+    }catch(err){
+      console.error(err);
+      alert('ERROR');
     }
   }
 

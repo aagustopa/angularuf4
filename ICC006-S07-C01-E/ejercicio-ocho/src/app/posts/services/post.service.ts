@@ -18,7 +18,7 @@ export class PostService {
       );
   }
   async createPost(post: Post): Promise<any> {
-    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1', {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -26,6 +26,19 @@ export class PostService {
       body: JSON.stringify(post)
     });
     if (response.status !== 201) {
+      return false;
+    }
+    return await response.json();
+  }
+  async deletePost(post: Post): Promise<any> {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts/1', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(post)
+    });
+    if (response.status !== 200) {
       return false;
     }
     return await response.json();

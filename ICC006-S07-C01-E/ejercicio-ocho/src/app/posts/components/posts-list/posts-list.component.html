@@ -9,7 +9,9 @@
         <tr *ngFor="let post of posts">
             <td>{{post.title}}</td>
             <td>{{post.userId}}</td>
-            <td><input type="submit" value="Delete"></td>
+            <td><input type="submit" value="Delete" (click)="submitDelete(post.id)"></td>
+            <!-- (submit) y (click) hacen lo mismo, crear un evento de click pero submit se usa
+            cuando el evento está dentro de un formulario. click se puede usar sin formulario y sin preventdefault() -->
         </tr>
     </ng-container>
 </table>

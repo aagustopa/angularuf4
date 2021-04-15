@@ -27,7 +27,7 @@ export class CreatePostComponent implements OnInit {
       const res = await this.post$.createPost(this.post);
       if(res){
         console.log(res);
-        alert('Usuario creado!');
+        alert('Post creado!');
       }else{
         console.error('ERROR');
       }

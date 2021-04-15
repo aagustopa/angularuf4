@@ -5,6 +5,7 @@ import { PostsRoutingModule } from './posts-routing.module';
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { PostsListComponent } from './components/posts-list/posts-list.component';
 
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { PostsListComponent } from './components/posts-list/posts-list.component
     PostsListComponent
   ],
   imports: [
+    FormsModule,
     CommonModule,
     PostsRoutingModule
   ]

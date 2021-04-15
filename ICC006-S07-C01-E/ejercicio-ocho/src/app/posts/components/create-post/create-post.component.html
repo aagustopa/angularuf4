@@ -1,1 +1,14 @@
 <p>create-post works!</p>
+<form (submit)="submitForm($event)">
+    <div>
+        <label for="title">Title</label>
+        <input type="text" id="title" name="title" [(ngModel)]="post.title">
+    </div>
+    <br>
+    <div>
+        <label for="body">Body</label>
+        <input type="text" id="body" name="body" [(ngModel)]="post.body">
+    </div>
+    <br>
+    <input type="submit" value="Crear post">
+</form>
